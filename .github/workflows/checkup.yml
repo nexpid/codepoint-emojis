@@ -9,6 +9,7 @@ on:
       - ".github/workflows/checkup.yml"
   schedule:
     - cron: "0 0,12 * * *"
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.ref }}
