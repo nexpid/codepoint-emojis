@@ -47,7 +47,9 @@ jobs:
 
       - name: Convert checkup things
         working-directory: main
-        run: .github/scripts/checkup/convert.sh
+        run: |
+          chmod +x .github/scripts/checkup/convert.sh
+          .github/scripts/checkup/convert.sh
 
       - name: Move data directory
         run: mv -v main/data/* data/
