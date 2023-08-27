@@ -63,6 +63,9 @@ jobs:
       - name: Move data directory
         run: mv -v main/data/* data/
 
+      - name: Check data file size lol
+        run: du -hs data
+
       - name: Commit changes
         working-directory: data
         run: |
