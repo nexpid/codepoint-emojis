@@ -20,7 +20,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Install LFS
+      - name: Setup LFS
         run: |
           sudo apt-get install git-lfs
           git lfs install
@@ -46,11 +46,15 @@ jobs:
 
       - uses: FedericoCarboni/setup-ffmpeg@v2
 
-      - name: Install PNPM
+      - name: Setup PNPM
         working-directory: main/.github/scripts
         run: |
           npm i -g pnpm
           pnpm i
+
+      - name: Setup gifsicle
+        working-directory: main/.github/scripts
+        run: npm i -g gifsicle
 
       - name: Checkup
         working-directory: main/.github/scripts
